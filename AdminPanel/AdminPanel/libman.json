@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "popper.js@2.11.8",
+      "destination": "wwwroot/assets/libs/popper.js/",
+      "files": [
+        "umd/popper.min.js",
+        "umd/popper-base.min.js"
+      ]
+    }
+  ,
+{
+  "provider": "cdnjs",
+  "library": "perfect-scrollbar@1.5.3",
+  "destination": "wwwroot/assets/libs/perfect-scrollbar/"
+}
+,
+{
+  "provider": "cdnjs",
+  "library": "node-waves@0.7.6",
+  "destination": "wwwroot/assets/libs/node-waves/"
+}
+,
+    {
+      "provider": "cdnjs",
+      "library": "hammer.js@2.0.8",
+      "destination": "wwwroot/assets/libs/hammer.js/"
+    }
+]
+}

@@ -1,0 +1,41 @@
+﻿@using AdminPanel.Components.AdminPanelLayoutComponents
+<!DOCTYPE html>
+
+<html lang="en"
+      class="light-style layout-navbar-fixed layout-menu-fixed layout-compact"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="assets/"
+      data-template="vertical-menu-template-starter">
+
+<head>
+
+    <AdminPanelMetaTags/>
+    <AdminPanelFontIcons/>
+    <AdminPanelFonts/>
+    <AdminPanelCoreStyles/>
+    <CustomizeConfigScripts/>
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="AdminPanel.styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <HeadOutlet @rendermode="@RenderModeForPage" />
+</head>
+
+<body>
+    <Routes @rendermode="@RenderModeForPage" />
+    <AdminPanelCoreScripts />
+    <script src="_framework/blazor.web.js"></script>
+
+
+</body>
+
+</html>
+
+@code {
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
+
+    private IComponentRenderMode? RenderModeForPage => HttpContext.Request.Path.StartsWithSegments("/Account")
+        ? null
+        : InteractiveServer;
+}
